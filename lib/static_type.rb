@@ -1,6 +1,5 @@
 require 'static_type/version'
-require 'static_type/import'
-require 'static_type/int_variable'
+require 'static_type/functions'
 
 module StaticType
 end

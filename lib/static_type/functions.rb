@@ -5,7 +5,10 @@ module StaticType
         self.instance_variable_get('@' + variable_name.to_s)
       end
       define_method(variable_name.to_s + '=') do |value|
-        self.instance_variable_set('@' + variable_name.to_s, value)
+        if variable_type == :int
+          raise if value.class <= Integer
+          self.instance_variable_set('@' + variable_name.to_s, value)
+        end
       end
     end
   end
